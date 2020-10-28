@@ -14,8 +14,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  <div *ngIf = "folder=='Categories'">
+    <br><br>
+    <div *ngIf = "areCategories == false" class= "teste">
+      <input class="custom-file-input" type = file accept=".csv" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"/> 
+    </div>
+
+    <br><br>
+  
+    <div>
+      <ion-list *ngIf = "areCategories == true" inset=true> 
+        <ion-item *ngFor="let item of name; let i = index" >
+          {{ name[i] }} - (id: {{ id[i] }})
+        </ion-item>
+      </ion-list>
+    </div>
+
+</div>
+
+
+
+
+
 </ion-content>

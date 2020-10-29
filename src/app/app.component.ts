@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     {
       title: 'Categories',
       url: '/folder/Categories',
-      icon: 'file-tray-stackedl'
+      icon: 'file-tray-stacked'
     },
     {
       title: 'Products',

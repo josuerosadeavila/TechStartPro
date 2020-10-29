@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { NewproductPageModule } from 'src/app/pages/newproduct/newproduct.module';
+import { DetailproductPageModule } from 'src/app/pages/detailproduct/detailproduct.module';
+
 
 import { CategoriesService } from 'src/app/services/categories.service';
 @NgModule({
@@ -25,6 +28,9 @@ import { CategoriesService } from 'src/app/services/categories.service';
     NgxCsvParserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    NewproductPageModule,
+    DetailproductPageModule 
+
   ],
   providers: [
     StatusBar,

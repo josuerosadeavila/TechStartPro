@@ -16,8 +16,9 @@
 
 
   <div *ngIf = "folder=='Categories'">
-    <br><br>
+   
     <div *ngIf = "areCategories == false" class= "teste">
+      <br><br>
       <input class="custom-file-input" type = file accept=".csv" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"/> 
     </div>
 
@@ -31,7 +32,48 @@
       </ion-list>
     </div>
 
-</div>
+  </div>
+
+  <div *ngIf = "folder=='Products'">
+    <br><br>
+
+    <ion-row  class = "grid">
+        <ion-col> 
+          <ion-button  color=success (click)='newProduct()'>New Product</ion-button>
+        </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="text">Filter by name, product id, category id, description or price.</p>
+      </ion-col>
+      
+    </ion-row>
+      <ion-searchbar *ngIf = "areProducts == true" [(ngModel)]="search" (ionInput)="onInput($event)" ></ion-searchbar>
+         
+      <br><br>
+
+    <ion-grid *ngIf = "areProducts == true">
+      <ion-item  *ngFor="let item of (filtername); let i = index">
+        <ion-row *ngIf = "filtername[i]">
+          <ion-col class="um">
+            {{ filtername[i]}}
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="getDetails(id_product[i])">Details</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color = "danger" (click)="exclude(id_product[i])">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+    </ion-grid>
+   
+  </div>
+
 
 
 

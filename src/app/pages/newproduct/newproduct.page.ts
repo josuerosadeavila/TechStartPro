@@ -27,7 +27,7 @@ export class NewproductPage implements OnInit {
     private modalCtrl: ModalController,
     private db : AngularFirestore,
     private alert: AlertController,
-    //private fp: FolderPage,
+
   ) { }
 
   ngOnInit() {
@@ -58,8 +58,7 @@ export class NewproductPage implements OnInit {
         for(let i=0;querySnapshot.docs.length;i++){
           this.name[i] = querySnapshot.docs[i].data().name;
           this.id[i] = querySnapshot.docs[i].id;
-          console.log(this.name[i]);
-          //this.areCategories = true;
+
           }   
   });
 
@@ -76,11 +75,11 @@ export class NewproductPage implements OnInit {
       await this.db.collection('products').add({
       name: this.productname,
       description: this.description,
-      price: "R$ " + this.price,
+      price: this.price,
       id_category : this.id[this.number]
       });
       this.voltarClicked();
-      this.presentAlert("Success!","Product added");
+      this.presentAlert("Success!","Product added. Refresh the page to update.");
       
            
     

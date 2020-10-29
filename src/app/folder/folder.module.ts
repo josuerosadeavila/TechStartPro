@@ -7,13 +7,24 @@ import { IonicModule } from '@ionic/angular';
 import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
+import { RouterModule } from '@angular/router';
+import { NewproductPageModule } from 'src/app/pages/newproduct/newproduct.module';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    //NewproductPageModule,
+    FolderPageRoutingModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: FolderPage
+      }
+    ]),
   ],
   declarations: [FolderPage]
 })

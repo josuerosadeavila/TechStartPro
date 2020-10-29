@@ -62,11 +62,11 @@ export class CategoriesService {
         for(let i=0; 10;i++){
           this.name[i] = querySnapshot.docs[i].data().name;
           this.id[i] = querySnapshot.docs[i].id;
-          //console.log(this.name[i]);
+
           this.areCategories = true;
-          //return this.name[i];
+
           }   
-    //return this.id;
+
   });
 
   return this.id;

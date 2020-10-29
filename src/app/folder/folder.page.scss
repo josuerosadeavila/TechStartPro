@@ -58,3 +58,21 @@ ion-menu-button {
   margin: 0 auto;
   text-align: center;
 }
+
+.grid {
+  text-align: center;
+}
+ion-row{
+  ion-col{
+    .text{
+      font-size: 15px;
+      padding:20px;
+    }
+
+      width: 400px;
+    ion-button{
+      z-index: 10;
+      
+    }
+  }
+}

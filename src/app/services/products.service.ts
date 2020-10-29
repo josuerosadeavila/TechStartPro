@@ -28,7 +28,7 @@ export class ProductsService {
 
   constructor(
     private db: AngularFirestore,
-    private categoriesService: CategoriesService,
+    public categoriesService: CategoriesService,
     private alert: AlertController,
   ) { }
 
@@ -45,7 +45,6 @@ export class ProductsService {
         this.id_category[i] = querySnapshot.docs[i].data().id_category;
         this.areProducts = true;
         this.filtername[i] = this.productname[i];
-        console.log(this.filtername[i]);
       }
       
     });
@@ -54,9 +53,7 @@ export class ProductsService {
 
   //listen to search envents
   async onInput(evt){
-       
     const searchTerm = evt.srcElement.value; 
-   console.log(searchTerm);
 
     for(let i=0;this.productname[i];i++){
       if(this.productname[i].includes(searchTerm) || 

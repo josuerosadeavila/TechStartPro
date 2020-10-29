@@ -26,7 +26,7 @@ export class NewproductPage implements OnInit {
     private modalCtrl: ModalController,
     private db: AngularFirestore,
     private alert: AlertController,
-    private categoriesService: CategoriesService
+    public categoriesService: CategoriesService
 
   ) { }
 
@@ -51,7 +51,7 @@ export class NewproductPage implements OnInit {
   }
 
   //save product infomation to database
-  async saveProductS() {
+  async saveProduct() {
     var matches = this.categoriesService.category.match(/\d+$/);
 
     if (matches) {

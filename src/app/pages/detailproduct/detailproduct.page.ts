@@ -28,12 +28,11 @@ export class DetailproductPage implements OnInit {
     private navParams: NavParams,
     private db: AngularFirestore,
     private alert: AlertController, 
-    private categoriesService: CategoriesService
+    public categoriesService: CategoriesService
   ) { }
 
   ngOnInit() {
     this.id_product = this.navParams.get('id_product');
-    console.log(this.id_product);
     this.editproduct = false;
     this.getProductDetails();
   }

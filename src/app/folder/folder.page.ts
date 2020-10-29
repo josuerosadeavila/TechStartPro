@@ -37,8 +37,8 @@ export class FolderPage implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
     private ngxCsvParser: NgxCsvParser,
     private db: AngularFirestore,
-    private categoriesService: CategoriesService,
-    private productsService: ProductsService,
+    public categoriesService: CategoriesService,
+    public productsService: ProductsService,
     private alert: AlertController,
     private modalController: ModalController
     ) { }

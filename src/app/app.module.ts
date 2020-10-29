@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { NewproductPageModule } from 'src/app/pages/newproduct/newproduct.module';
 import { DetailproductPageModule } from 'src/app/pages/detailproduct/detailproduct.module';
 
@@ -26,7 +26,7 @@ import { CategoriesService } from 'src/app/services/categories.service';
     IonicModule.forRoot(),
     AppRoutingModule,
     NgxCsvParserModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseCongif),
     AngularFirestoreModule,
     NewproductPageModule,
     DetailproductPageModule 

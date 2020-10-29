@@ -15,63 +15,61 @@
   </ion-header>
 
 
-  <div *ngIf = "folder=='Categories'">
-   
-    <div *ngIf = "areCategories == false" class= "teste">
+  <div *ngIf="folder=='Categories'">
+
+    <div *ngIf="categoriesService.areCategories == false" class="teste">
       <br><br>
-      <input class="custom-file-input" type = file accept=".csv" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"/> 
+      <input class="custom-file-input" type=file accept=".csv" #fileImportInput name="File Upload" id="csvFileUpload"
+        (change)="fileChangeListener($event)" />
     </div>
 
     <br><br>
-  
+
     <div>
-      <ion-list *ngIf = "areCategories == true" inset=true> 
-        <ion-item *ngFor="let item of name; let i = index" >
-          {{ name[i] }} - (id: {{ id[i] }})
+      <ion-list *ngIf="categoriesService.areCategories == true" inset=true>
+        <ion-item *ngFor="let item of categoriesService.name; let i = index">
+          {{ categoriesService.name[i] }} - (id: {{ categoriesService.id[i] }})
         </ion-item>
       </ion-list>
     </div>
 
   </div>
 
-  <div *ngIf = "folder=='Products'">
+  <div *ngIf="folder=='Products'">
     <br><br>
 
-    <ion-row  class = "grid">
-        <ion-col> 
-          <ion-button  color=success (click)='newProduct()'>New Product</ion-button>
-        </ion-col>
+    <ion-row class="grid">
+      <ion-col>
+        <ion-button color=success (click)='newProductPopUp()'>New Product</ion-button>
+      </ion-col>
 
     </ion-row>
     <ion-row>
       <ion-col>
-        <p class="text">Filter by name, product id, category id, description or price.</p>
+        <p *ngIf="productsService.areProducts == true" class="text">Filter by name, product id, category id, description
+          or price.</p>
       </ion-col>
-      
-    </ion-row>
-      <ion-searchbar *ngIf = "areProducts == true" [(ngModel)]="search" (ionInput)="onInput($event)" ></ion-searchbar>
-         
-      <br><br>
 
-    <ion-grid *ngIf = "areProducts == true">
-      <ion-item  *ngFor="let item of (filtername); let i = index">
-        <ion-row *ngIf = "filtername[i]">
-          <ion-col class="um">
-            {{ filtername[i]}}
-          </ion-col>
-          <ion-col>
-            <ion-button (click)="getDetails(id_product[i])">Details</ion-button>
-          </ion-col>
-          <ion-col>
-            <ion-button color = "danger" (click)="exclude(id_product[i])">
-              <ion-icon name="trash-outline"></ion-icon>
-            </ion-button>
-          </ion-col>
+    </ion-row>
+    <ion-searchbar *ngIf="productsService.areProducts == true" [(ngModel)]="search"
+      (ionInput)="productsService.onInput($event)"></ion-searchbar>
+
+    <br><br>
+
+    <ion-grid *ngIf="productsService.areProducts == true">
+      <ion-item *ngFor="let item of (productsService.filtername); let i = index">
+        <ion-row *ngIf="productsService.filtername[i]">
+          {{ productsService.filtername[i]}}
         </ion-row>
+        <ion-button slot="end" (click)="getDetailsPopUp(productsService.id_product[i])">Details</ion-button>
+        <ion-button slot="end" color="danger" (click)="excludeProduct(productsService.id_product[i])">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
       </ion-item>
 
+
     </ion-grid>
-   
+
   </div>
 
 

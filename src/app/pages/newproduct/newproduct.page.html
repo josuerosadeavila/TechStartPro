@@ -1,65 +1,51 @@
 <ion-content>
 
-  <div class="header"
-       slot="fixed">
-    <div class="votlar ion-activatable"
-         role="button"
-         (click)="voltarClicked()">
+  <div class="header" slot="fixed">
+    <div class="votlar ion-activatable" role="button" (click)="voltarClicked()">
       <ion-icon name="arrow-back-outline"></ion-icon>
     </div>
   </div>
 
-<div>
-  <div class="icone-trans"
-       aria-hidden="true">
-  </div>
-
-  <h1 class="titulo">
-    New product
-  </h1>
   <div>
-    <ion-list>
-		  <ion-item>
-			<ion-label position="stacked">Name</ion-label>
-			<ion-input type="text" [(ngModel)]="productname"></ion-input>
-		  </ion-item>
+    <div class="icone-trans" aria-hidden="true">
+    </div>
 
-		  <ion-item>
-			<ion-label position="stacked">Description</ion-label>
-			<ion-input type="text" [(ngModel)]="description"></ion-input>
-		  </ion-item>
-
-		  <ion-item>
-			<ion-label position="stacked">Price</ion-label>
-			<ion-input type="number" [(ngModel)]="price"></ion-input>
-      </ion-item>
-      <br>
-
-      <span class="texto">
-        Select the category
-      </span>
-      
-      <ion-radio-group [(ngModel)]="category">
-        <ion-item *ngFor="let item of name; let i = index">
-          <ion-label class="label">{{ name[i] }}</ion-label>
-          <ion-radio >{{ i }}</ion-radio>
+    <h1 class="titulo">
+      New product
+    </h1>
+    <div>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Name</ion-label>
+          <ion-input type="text" [(ngModel)]="productname"></ion-input>
         </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Description</ion-label>
+          <ion-input type="text" [(ngModel)]="description"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Price</ion-label>
+          <ion-input type="number" [(ngModel)]="price"></ion-input>
+        </ion-item>
+        <br>
+
+        <span class="texto">
+          Select the category
+        </span>
+
+        <ion-radio-group [(ngModel)]="categoriesService.category">
+          <ion-item *ngFor="let item of categoriesService.name; let i = index">
+            <ion-label class="label">{{ categoriesService.name[i] }}</ion-label>
+            <ion-radio>{{ i }}</ion-radio>
+          </ion-item>
         </ion-radio-group>
 
-        <!--<ion-list [(ngModel)]="category">
-          <ion-item *ngFor="let item of name; let i = index">
-            <ion-label>{{ name[i] }}</ion-label>
-              <ion-checkbox></ion-checkbox>
-          </ion-item>
-        </ion-list>-->
+        <ion-item>
+          <ion-button color="success" shape="round" fill="solid" (click)="saveProduct()">Save Product</ion-button>
+        </ion-item>
+      </ion-list>
 
-      <ion-item>
-        <ion-button color = "success" shape = "round" fill="solid" (click)="save()">Save Product</ion-button>
-      </ion-item>
-    </ion-list>
-
-
-
-
+    </div>
   </div>
-</div>

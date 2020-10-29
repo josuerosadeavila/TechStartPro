@@ -63,6 +63,7 @@ ion-menu-button {
   text-align: center;
 }
 ion-row{
+
   ion-col{
     .text{
       font-size: 15px;
@@ -70,9 +71,18 @@ ion-row{
     }
 
       width: 400px;
+      padding:20px
     ion-button{
       z-index: 10;
       
+    }
+  }
+
+  ion-grid{
+    ion-item{
+      ion-row{
+        float: right;
+      }
     }
   }
 }

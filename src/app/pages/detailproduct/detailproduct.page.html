@@ -1,93 +1,89 @@
 <ion-content>
 
-  <div class="header"
-       slot="fixed">
-    <div class="votlar ion-activatable"
-         role="button"
-         (click)="voltarClicked()">
+  <div class="header" slot="fixed">
+    <div class="votlar ion-activatable" role="button" (click)="voltarClicked()">
       <ion-icon name="arrow-back-outline"></ion-icon>
     </div>
   </div>
 
-<div>
-  <div class="icone-trans"
-       aria-hidden="true">
-  </div>
+  <div>
+    <div class="icone-trans" aria-hidden="true">
+    </div>
 
-  <h1 *ngIf ="editproduct==false" class="titulo">
-    {{ productname }}
-  </h1>
-  <div *ngIf ="editproduct==false">
-    <ion-list>
-		  <ion-item>
-        <p>
-          Description: {{ description }}
-        <p>
-		  </ion-item>
-
-		  <ion-item>
-        <p>
-          Price: R$ {{ price }}
-        </p>
-      </ion-item>
-
-      <ion-item>
-        id: {{ id_product }}
-      </ion-item>
-    
-		  <ion-item>
-        Category: {{ id_category }}
-      </ion-item>
-      <br>
-
-      <ion-item>
-        <ion-button color = "success" shape = "round" fill="solid" (click)="edit()">Edit infomation</ion-button>
-      </ion-item>
-    </ion-list>
-  </div>
-  <h1 *ngIf ="editproduct==true" class="titulo">
-    Edit product
-  </h1>
-  <div *ngIf ="editproduct==true">
-    <ion-list>
-		  <ion-item>
-			<ion-label position="stacked">Name</ion-label>
-			<ion-input type="text" [(ngModel)]="productname"></ion-input>
-		  </ion-item>
-
-		  <ion-item>
-			<ion-label position="stacked">Description</ion-label>
-			<ion-input type="text" [(ngModel)]="description"></ion-input>
-		  </ion-item>
-
-		  <ion-item>
-			<ion-label position="stacked">Price</ion-label>
-			<ion-input type="number" [(ngModel)]="price"></ion-input>
-      </ion-item>
-      <ion-item>
-        <p>
-          Current category: {{ categoryname }}
-        </p>
-      </ion-item>
-      <br>
-
-      <span class="texto">
-        Select the new category
-      </span>
-      
-      <ion-radio-group [(ngModel)]="category">
-        <ion-item *ngFor="let item of name; let i = index">
-          <ion-label class="label">{{ name[i] }}</ion-label>
-          <ion-radio >{{ i }}</ion-radio>
+    <h1 *ngIf="editproduct==false" class="titulo">
+      {{ productname }}
+    </h1>
+    <div *ngIf="editproduct==false">
+      <ion-list>
+        <ion-item>
+          <p>
+            Description: {{ description }}
+          <p>
         </ion-item>
+
+        <ion-item>
+          <p>
+            Price: R$ {{ price }}
+          </p>
+        </ion-item>
+
+        <ion-item>
+          id: {{ id_product }}
+        </ion-item>
+
+        <ion-item>
+          Category: {{ id_category }}
+        </ion-item>
+        <br>
+
+        <ion-item>
+          <ion-button color="success" shape="round" fill="solid" (click)="editPopUp()">Edit infomation</ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+    <h1 *ngIf="editproduct==true" class="titulo">
+      Edit product
+    </h1>
+    <div *ngIf="editproduct==true">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Name</ion-label>
+          <ion-input type="text" [(ngModel)]="productname"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Description</ion-label>
+          <ion-input type="text" [(ngModel)]="description"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Price</ion-label>
+          <ion-input type="number" [(ngModel)]="price"></ion-input>
+        </ion-item>
+        <ion-item>
+          <p>
+            Current category: {{ categoryname }}
+          </p>
+        </ion-item>
+        <br>
+
+        <span class="texto">
+          Select the new category
+        </span>
+
+        <ion-radio-group [(ngModel)]="categoriesService.category">
+          <ion-item *ngFor="let item of categoriesService.name; let i = index">
+            <ion-label class="label">{{ categoriesService.name[i] }}</ion-label>
+            <ion-radio>{{ i }}</ion-radio>
+          </ion-item>
         </ion-radio-group>
 
-      <ion-item>
-        <ion-button color = "success" shape = "round" fill="solid" (click)="update()">Save Product</ion-button>
-      </ion-item>
-    </ion-list>
+        <ion-item>
+          <ion-button color="success" shape="round" fill="solid" (click)="updateProduct()">Save Product</ion-button>
+        </ion-item>
+      </ion-list>
 
-  <div>
+      <div>
 
-  </div>
-</div>
+      </div>
+    </div>

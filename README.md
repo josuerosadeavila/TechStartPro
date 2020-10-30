@@ -32,3 +32,6 @@ ionic serve
 * Visual Studio Code;
 * Ionic & Angular (Typescript, HTML, SASS);
 * Banco de dados: Firestore.
+
+###Versions
+

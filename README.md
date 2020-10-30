@@ -33,5 +33,9 @@ ionic serve
 * Ionic & Angular (Typescript, HTML, SASS);
 * Banco de dados: Firestore.
 
-## Versions
+### Versions
+- ionic 6.12.0
+- npm 6.14.4
+- Angular CLI 10.2.0
+- Node: 12.16.2 
 

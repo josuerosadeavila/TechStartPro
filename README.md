@@ -33,5 +33,5 @@ ionic serve
 * Ionic & Angular (Typescript, HTML, SASS);
 * Banco de dados: Firestore.
 
-##Versions
+## Versions
 

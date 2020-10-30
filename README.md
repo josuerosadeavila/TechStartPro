@@ -8,6 +8,7 @@ A minha escolha foi por utilizar o framework Ionic (com Angular) porque acho que
 
 # Instruções
 A minha aplicação está disponível em: https://work-olist.web.app/
+
 Eu deixei um aquivo .csv nos repositórios aqui do git para ajudar no teste da aplicação. Ela se chama *input-categorias.csv*.
 
 Caso queria rodar a aplicação localmente é preciso instalar o ionic.Para isso é possível utilizar o gerenciador de pacotes **npm**.
